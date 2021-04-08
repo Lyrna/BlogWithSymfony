@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="header">
+    <h1>S<span class="Y-deco">y</span>mfony Blog</h1>
+</div>
+
+<div class="fond pb-5">
+	<div class="container articles-area">
+		<div class="row">
+			<h2 class="text-center my-5">Mes articles</h2>
+			<div class="grid js-masonry">
+				{% for post in article %}
+						<div class="grid-item">
+							<div class="card">
+								<div class="card-body">
+									<div class="card-title">
+										<h3 class = "mb-4">{{ post.title }}</h3>
+									</div>
+									<div>Rédigé par <span class="fw-bold my-4"> {{ post.author_id.name }} </span>
+									</div>
+									<div class="date">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+									<path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+									<path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+									</svg> Publié le {{ post.createdAt |date('d M. Y')}} à {{ post.createdAt |date('H:i')}}</div>
+								</div>
+								<div class="card-text my-3">{{ post.content |striptags|slice(0, 150)}}</div>
+								<a href="/article/{{ post.id }}" class="btn btn-lire">Lire plus</a>
+							</div>
+						</div>		
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+{% endblock %}

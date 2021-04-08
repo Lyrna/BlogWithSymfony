@@ -1,0 +1,213 @@
+@font-face{
+	font-family: GreatVibes;
+	src: url(../fonts/GreatVibes-Regular.otf);
+}
+
+@font-face{
+	font-family: Berkshire;
+	src: url(../fonts/berkshireswash-regular.ttf);
+}
+
+@font-face{
+	font-family: Calistoga;
+	src: url(../fonts/Calistoga-Regular.ttf);
+}
+
+@font-face{
+	font-family: Raleway;
+	src: url(../fonts/Raleway-Medium.ttf);
+}
+
+@font-face{
+	font-family: Roboto;
+	src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face{
+	font-family: Poppins;
+	src: url(../fonts/Poppins-Regular.otf);
+}
+
+body{
+	box-sizing: border-box;
+	margin: 0;
+	color: #170F23;
+	background-image: url(../img/fond/fond6.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	font-family: Raleway;
+	letter-spacing: .4px;
+}
+
+.header{
+	background: #170F23EF;
+	color: #fff;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.fond{
+	background: #F4F4F4FF;
+}
+
+h1{
+	font-family: GreatVibes;
+	margin: 0;
+	font-size: 6em;
+	text-align: center;
+}
+
+h2{
+	font-family: GreatVibes;
+	font-size: 4em;
+	color: #170F23;
+}
+
+h3{
+	font-size: 2em;
+}
+
+.Y-deco{
+	color: #F87D8E;
+}
+
+.card{
+	transition: .2s;
+}
+
+.card:hover{
+	background: #FBF9F8;
+}
+
+.card-title{
+	color: #170F23;
+	font-family: Berkshire;
+}
+
+.date{
+	color: grey;
+	font-size: .9em;
+}
+
+.bi-calendar3{
+	color: #F87D8E;
+	margin-right: 5px;
+}
+
+.card-text{
+	padding: 5px 20px;
+}
+
+.btn-lire{
+	font-family: Poppins;
+	font-weight: bold;
+	letter-spacing: .8px;
+	background: #170F23DF;
+	color: white;
+	padding: 15px 30px;
+	font-size: 1em;
+}
+
+.btn-lire:hover{
+	background: #402C55;
+	color: white;
+}
+
+.grid-item{ 
+	width: 90%;
+	margin: 5px;
+}
+
+@media (min-width: 1000px){
+
+	.grid-item:nth-child(n+1) { 
+		width: 30%;
+	}
+
+	.grid-item:nth-child(n+2) { 
+		width: 60.8%;
+	}
+
+	.grid-item:nth-child(n+3) { 
+		width: 30%;
+	}
+}
+
+@media (min-width: 576px){
+	.grid-item{
+		width: 45%;
+	}
+}
+
+.my-row{
+	padding: 30px 0;
+}
+
+.article{
+	background: white;
+	border: 1px solid rgba(0,0,0,.125);
+	border-radius: .25rem;
+	margin: 0 50px;
+	padding: 20px 80px;
+}
+
+button.home{
+	font-family: Poppins;
+	border: none;
+	font-size: 1.1em;
+	background: none;
+	position: absolute;
+	top: 50px;
+	left: 30px;
+}
+
+button.home a{
+	/*background: #F77587CF;*/
+	padding: 15px 20px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 3px;
+	transition: .2s;
+	letter-spacing: 1px;
+	background: #402C55;
+}
+
+button.home a:hover{
+	color: #fff;
+	text-decoration: none;
+	background: #61487ACF;
+	/*background: #F77587;*/
+}
+
+.bi-house-door{
+	margin-right: 20px;
+	color: #fff;
+}
+
+.me-connecter{
+	margin-top: 30px;
+}
+
+h1.connexion{
+	font-size: 4.5em;
+}
+
+label{
+	margin: 8px 0;
+}
+
+@media(min-width: 600px){
+	.connexion-area{
+		width: 60%;
+		margin: auto;
+		max-width: 600px;
+	}
+}
+
+@media(max-width: 600px){
+	h1.connexion{
+		font-size: 3em;
+	}
+}
