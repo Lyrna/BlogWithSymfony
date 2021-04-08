@@ -1,0 +1,26 @@
+{% extends 'base_article.html.twig' %}
+
+{% block title %}Edit Article{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+
+	{% if app.user %}
+    <h1>Edit Article</h1>
+
+    {{ include('security/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('article_index') }}">back to list</a>
+
+    {{ include('security/_delete_form.html.twig') }}
+
+    {% else %}
+        	
+        <nav>
+            <a href="{{ path('app_login') }}" class="text-light mx-3">Connexion</a>
+        </nav>
+	{% endif %}
+{% endblock %}

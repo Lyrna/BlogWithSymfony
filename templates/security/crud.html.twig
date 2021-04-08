@@ -1,0 +1,48 @@
+{% extends 'base_article.html.twig' %}
+
+{% block body %}
+
+{% if app.user %}
+    <header>
+        <h1 class="mb-2">Gestion des articles</h1>
+        <p>Espace Administrateur</p>
+    </header>
+<div class="fond p-5">
+<a href="{{ path('article_new') }}"><button class="btn btn-blue">Créer un article</button></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Titre</th>
+                <th>Publié le</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td class="article-title">{{ article.title }}</td>
+                <td>{{ article.createdAt ? article.createdAt|date('d M. Y')}} à {{ article.createdAt ? article.createdAt|date('H:i')}}</td>
+                <td>
+                    <a href="{{ path('article_show', {'id': article.id}) }}"><button class="btn btn-blue">Voir</button></a>
+                    <a href="{{ path('article_edit', {'id': article.id}) }}"><button class="btn btn-primary">Editer</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% else %}
+<div class="warning-page-section">
+        <p class="text-center">Vous ne semblez pas connecté.</p> 
+        <p class="text-center">Veuillez vous connecter pour avoir accès à l'espace adminitratif de SymfonyBlog.</p>
+        <a href="{{ path('app_login') }}"><button class="btn btn-lire">Connexion</button></a>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base_article.html.twig' %}
+
+{% block title %}Ajouter un article{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Create new Article</h1>
+
+    {{ include('security/_form.html.twig') }}
+
+    <a href="{{ path('article_index') }}">back to list</a>
+{% endblock %}

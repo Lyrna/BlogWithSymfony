@@ -1,0 +1,98 @@
+body{
+	background-attachment: fixed;
+	background-position: 50% 50%;
+}
+
+header{
+	height: 300px;
+}
+
+.header{
+	background: #170F23EF;
+	color: #fff;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+nav.nav-connected{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	background-color: #170F23FF;
+}
+
+h1{
+	font-family: Roboto;
+	font-size: 3em;
+}
+
+/*login page*/
+.me-connecter{
+	margin-top: 30px;
+}
+
+h1.connexion{
+	font-size: 3em;
+}
+
+label{
+	margin: 8px 0;
+}
+
+@media(min-width: 600px){
+	.connexion-area{
+		width: 60%;
+		margin: auto;
+		max-width: 600px;
+	}
+}
+
+@media(max-width: 600px){
+	h1.connexion{
+		font-size: 2em;
+	}
+}
+
+/*admin page and articles pages*/
+table{
+	margin: 30px 10px;
+}
+
+th.show{
+	min-width: 200px;
+}
+
+.delete-form{
+	display: inline;
+}
+
+.flex-space-between{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+td.article-title{
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+div.warning-page-section{
+	background-color: #170F23EF;
+	height: 100vh;
+	display: flex;
+	margin: 0;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4em;
+	color: white;
+}
+
+div.warning-page-section button.btn-lire{
+	font-weight: normal;
+}

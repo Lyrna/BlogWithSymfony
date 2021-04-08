@@ -1,0 +1,57 @@
+{% extends 'base_article.html.twig' %}
+
+
+{% block body %}
+
+{% if app.user %}
+
+<header>
+    <h1>Article : {{ article.title }}</h1>
+</header>
+
+<div class="fond p-5">
+
+    <div class="flex-space-between">
+        <div>
+            <a href="{{ path('article_index') }}" class="text-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square-fill mx-3" viewBox="0 0 16 16">
+            <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+            </svg>
+            Revenir à la liste d'articles</a>
+        </div>
+        <div>
+            <a href="{{ path('article_edit', {'id': article.id}) }}"><button class="btn btn-blue">Editer</button></a>
+
+            {{ include('security/_delete_form.html.twig') }}
+        </div>
+    </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="show">N°</th>
+                <td>{{ article.id }}</td>
+            </tr>
+            <tr>
+                <th class="show">Titre</th>
+                <td class="fw-bold">{{ article.title }}</td>
+            </tr>
+            <tr>
+                <th class="show">Contenu de l'article</th>
+                <td>{{ article.content }}</td>
+            </tr>
+            <tr>
+                <th class="show">Publié le</th>
+                <td>{{ article.createdAt ? article.createdAt|date('d M. Y')}} à {{ article.createdAt ? article.createdAt|date('H:i') }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="warning-page-section">
+        <p class="text-center">Vous ne semblez pas connecté.</p> 
+        <p class="text-center">Veuillez vous connecter pour avoir accès à l'espace adminitratif de SymfonyBlog.</p>
+        <a href="{{ path('app_login') }}"><button class="btn btn-lire">Connexion</button></a>
+</div>
+{% endif %}
+{% endblock %}
