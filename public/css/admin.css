@@ -1,4 +1,5 @@
 body{
+	background: #F4F4F4FF;
 	background-attachment: fixed;
 	background-position: 50% 50%;
 }
@@ -7,7 +8,7 @@ header{
 	height: 300px;
 }
 
-.header{
+header.header{
 	background: #170F23EF;
 	color: #fff;
 	height: 100vh;
@@ -17,11 +18,26 @@ header{
 	align-items: center;
 }
 
+header.crud{
+	height: 150px;
+	background-color: #170F23EF;
+}
+
 nav.nav-connected{
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	background-color: #170F23FF;
+	background-color: #423DB2;
+}
+
+nav a{
+	text-decoration: none;
+	color: #D1BDD1 !important;
+}
+
+nav a:hover{
+	text-decoration: underline;
+	color: #CAC8F4 !important;
 }
 
 h1{
@@ -96,3 +112,4 @@ div.warning-page-section{
 div.warning-page-section button.btn-lire{
 	font-weight: normal;
 }
+

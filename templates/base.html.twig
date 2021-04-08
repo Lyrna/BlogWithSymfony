@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,15 @@
     </head>
     <body>
         {% if app.user %}
-            <nav>
-                <a href="{{ path('home') }}" class="text-light mx-3">Accueil</a>
-                <a href="{{ path('article_index') }}" class="text-light mx-3">Tableau de bord</a>
-                <a href="{{ path('app_logout') }}" class="text-light mx-3">Déconnexion</a>
+            <nav class="nav-connected">
+                <div>
+                    <p class="text-light d-inline mx-3">Bienvenue, <span class="text-grey">{{ app.user.name }}</span></p>
+                </div>
+                <div>
+                    <a href="{{ path('home') }}" class="text-light mx-3">Accueil</a>
+                    <a href="{{ path('article_index') }}" class="text-light mx-3">Tableau de bord</a>
+                    <a href="{{ path('app_logout') }}" class="text-light mx-3">Déconnexion</a>
+                </div>
             </nav>
         {% else %}
             <nav>

@@ -49,12 +49,16 @@ header{
 	align-items: center;
 }
 
+header.page-article{
+	height: 300px;
+}
 nav{
 	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	background-color: #170F23FF;
 	width: 100%;
 	padding: 10px;
-	background-color: #170F23DD;
-	text-align: right;
 }
 
 nav a{

@@ -1,22 +1,29 @@
 {% extends 'base_article.html.twig' %}
 
-{% block title %}Edit Article{% endblock %}
-
-{% block stylesheet %}
-	<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-{% endblock %}
-
 {% block body %}
 
 	{% if app.user %}
-    <h1>Edit Article</h1>
+    <header class="crud">
+        <h1>Edition d'un article</h1>
+    </header>
 
-    {{ include('security/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="fond px-5 py-4">
 
-    <a href="{{ path('article_index') }}">back to list</a>
-
-    {{ include('security/_delete_form.html.twig') }}
-
+        <div class="">
+        <div>
+            <a href="{{ path('article_index') }}" class="text-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square-fill mx-3" viewBox="0 0 16 16">
+            <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+            </svg>
+            Revenir à la liste d'articles</a>
+        </div>
+        <div>
+            {{ include('security/_form.html.twig', {'button_label': 'Valider les modifications'}) }}
+            {{ include('security/_delete_form.html.twig') }}
+        </div>
+    </div>
+            
+    </div>
     {% else %}
         	
         <nav>
