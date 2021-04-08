@@ -2,20 +2,20 @@
 
 {% block body %}
 <form method="post">
-    <div class="header">
+    <header class="header">
         <div class="container">
              {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
             {% if app.user %}
-                <div class="mb-3">
+                <div class="m-5">
                     <p class="fs-4">Bienvenue {{ app.user.name }} !</p>
-                    <p class="fs-4">Vous avez désormais accès à votre <a href="{{ path('article_index') }}" class="text-light">Tableau de bord</a>.</p>
-                    <p class="fs-4"><a href="{{ path('app_logout') }}" class="text-light">Se déconnecter</a></p>
+                    <p class="fs-4">Vous avez désormais accès à votre <a href="{{ path('article_index') }}" class="text-primary">Tableau de bord</a>.</p>
+                    <p class="fs-4"><a href="{{ path('app_logout') }}" class="text-primary">Se déconnecter</a></p>
                 </div>
                 {% else %}
-                <h1 class="connexion my-5 font-weight-normal">Connexion à Symfony Blog</h1>
+                <h1 class="connexion my-5 font-weight-normal">Connexion à <span class="title-website">Symfony Blog</span></h1>
                     <div class="connexion-area">
                         <label for="inputEmail">Email</label>
                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
@@ -37,12 +37,12 @@
                             </div>
                         #}
 
-                        <button class="btn btn-lire me-connecter" type="submit">
+                        <button class="btn btn-purple me-connecter" type="submit">
                             Me connecter
                         </button>
                     </div>
             {% endif %}
         </div>
-    </div>
+    </header>
 </form>
 {% endblock %}

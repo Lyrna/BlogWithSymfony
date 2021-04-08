@@ -9,8 +9,8 @@ header{
 }
 
 header.header{
-	background: #170F23EF;
-	color: #fff;
+	background: #f4f4f4;
+	color: #170F23EF;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -51,7 +51,12 @@ h1{
 }
 
 h1.connexion{
-	font-size: 3em;
+	font-size: 2em;
+}
+
+span.title-website{
+	font-family: GreatVibes;
+	font-size: 1.3em;
 }
 
 label{
@@ -98,7 +103,7 @@ td.article-title{
 }
 
 div.warning-page-section{
-	background-color: #170F23EF;
+	background-color: #f4f4f4;
 	height: 100vh;
 	display: flex;
 	margin: 0;
@@ -106,7 +111,7 @@ div.warning-page-section{
 	justify-content: center;
 	align-items: center;
 	font-size: 1.4em;
-	color: white;
+	color: black;
 }
 
 div.warning-page-section button.btn-lire{

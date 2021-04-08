@@ -28,8 +28,11 @@
         </nav>
     {% else %}
         <nav>
-            <a href="{{ path('home') }}" class="text-light mx-3">Accueil</a>
-            <a href="{{ path('app_login') }}" class="text-light mx-3">Connexion</a>
+            <div></div>
+            <div>
+                <a href="{{ path('home') }}" class="text-light mx-3">Accueil</a>
+                <a href="{{ path('app_login') }}" class="text-light mx-3">Connexion</a>
+            </div>
         </nav>
     {% endif %}
     <body>

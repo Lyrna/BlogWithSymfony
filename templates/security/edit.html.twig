@@ -8,8 +8,6 @@
     </header>
 
     <div class="fond px-5 py-4">
-
-        <div class="">
         <div>
             <a href="{{ path('article_index') }}" class="text-dark">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square-fill mx-3" viewBox="0 0 16 16">
@@ -20,14 +18,14 @@
         <div>
             {{ include('security/_form.html.twig', {'button_label': 'Valider les modifications'}) }}
             {{ include('security/_delete_form.html.twig') }}
-        </div>
-    </div>
-            
+        </div>     
     </div>
     {% else %}
-        	
-        <nav>
-            <a href="{{ path('app_login') }}" class="text-light mx-3">Connexion</a>
-        </nav>
+        <div class="warning-page-section">
+                <p class="text-center">Vous ne semblez pas connecté.</p> 
+                <p class="text-center">Veuillez vous connecter pour avoir accès à l'espace adminitratif de SymfonyBlog.</p>
+                <a href="{{ path('app_login') }}"><button class="btn btn-purple">Connexion</button></a>
+        </div>
+        
 	{% endif %}
 {% endblock %}
