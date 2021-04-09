@@ -20,6 +20,9 @@ class ArticleController extends AbstractController
      */
     public function index(ArticleRepository $articleRepository): Response
     {
+        if(!$this->getUser()){
+            return $this->RedirectToRoute('forbidden_access');
+        }
         return $this->render('security/crud.html.twig', [
             'articles' => $articleRepository->findAll(),
         ]);
@@ -30,6 +33,10 @@ class ArticleController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        if(!$this->getUser()){
+            return $this->RedirectToRoute('forbidden_access');
+        }
+
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
@@ -53,6 +60,10 @@ class ArticleController extends AbstractController
      */
     public function show(Article $article): Response
     {
+        if(!$this->getUser()){
+            return $this->RedirectToRoute('forbidden_access');
+        }
+
         return $this->render('security/show.html.twig', [
             'article' => $article,
         ]);
@@ -63,6 +74,10 @@ class ArticleController extends AbstractController
      */
     public function edit(Request $request, Article $article): Response
     {
+        if(!$this->getUser()){
+            return $this->RedirectToRoute('forbidden_access');
+        }
+
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
@@ -83,6 +98,10 @@ class ArticleController extends AbstractController
      */
     public function delete(Request $request, Article $article): Response
     {
+        if(!$this->getUser()){
+            return $this->RedirectToRoute('forbidden_access');
+        }
+
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);

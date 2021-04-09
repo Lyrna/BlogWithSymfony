@@ -19,15 +19,16 @@ header.header{
 }
 
 header.crud{
-	height: 150px;
+	height: 200px;
 	background-color: #170F23EF;
+	padding: 20px 40px;
 }
 
 nav.nav-connected{
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	background-color: #423DB2;
+	background-color: #170F23;
 }
 
 nav a{
@@ -36,7 +37,6 @@ nav a{
 }
 
 nav a:hover{
-	text-decoration: underline;
 	color: #CAC8F4 !important;
 }
 
@@ -82,12 +82,24 @@ table{
 	margin: 30px 10px;
 }
 
+table.table{
+	width: 95%;
+}
+
 th.show{
 	min-width: 200px;
 }
 
 .delete-form{
 	display: inline;
+}
+
+button.see-edit{
+	width: 75px;
+}
+
+button.btn-create{
+	margin-left: 20px;
 }
 
 .flex-space-between{
@@ -97,9 +109,9 @@ th.show{
 	align-items: center;
 }
 
-td.article-title{
+.label-show{
+	font-family: inherit;
 	font-size: 1.1em;
-	font-weight: bold;
 }
 
 div.warning-page-section{
@@ -118,3 +130,18 @@ div.warning-page-section button.btn-lire{
 	font-weight: normal;
 }
 
+label{
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+
+@media(max-width: 540px){
+	.d-none-table{
+		display: none;
+	}
+
+	.flex-space-between{
+		flex-direction: column;
+	}
+}

@@ -4,28 +4,23 @@
 
 	{% if app.user %}
     <header class="crud">
-        <h1>Edition d'un article</h1>
+        <h1 class="fs-3">Edition</h1>
     </header>
 
-    <div class="fond px-5 py-4">
-        <div>
+    <div class="fond py-4 lg-px-5">
+        <div class="pb-3">
             <a href="{{ path('article_index') }}" class="text-dark">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square-fill mx-3" viewBox="0 0 16 16">
             <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
             </svg>
             Revenir à la liste d'articles</a>
         </div>
-        <div>
+        <div class="p-2">
             {{ include('security/_form.html.twig', {'button_label': 'Valider les modifications'}) }}
             {{ include('security/_delete_form.html.twig') }}
         </div>     
     </div>
     {% else %}
-        <div class="warning-page-section">
-                <p class="text-center">Vous ne semblez pas connecté.</p> 
-                <p class="text-center">Veuillez vous connecter pour avoir accès à l'espace adminitratif de SymfonyBlog.</p>
-                <a href="{{ path('app_login') }}"><button class="btn btn-purple">Connexion</button></a>
-        </div>
-        
+        {{ include('security/_not_connected.html.twig') }}
 	{% endif %}
 {% endblock %}

@@ -6,13 +6,13 @@
 {% if app.user %}
 
 <header class="crud">
-    <h1>Article : {{ article.title }}</h1>
+    <h1 class="fs-2">Article n°{{ article.id }} : {{ article.title }}</h1>
 </header>
 
-<div class="fond px-5 py-4">
+<div class="fond py-4 px-3 lg-px-5">
 
     <div class="flex-space-between">
-        <div>
+        <div class="mb-3 p-1">
             <a href="{{ path('article_index') }}" class="text-dark">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square-fill mx-3" viewBox="0 0 16 16">
             <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
@@ -26,26 +26,13 @@
         </div>
     </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th class="show">N°</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th class="show">Titre</th>
-                <td class="fw-bold">{{ article.title }}</td>
-            </tr>
-            <tr>
-                <th class="show">Contenu de l'article</th>
-                <td>{{ article.content }}</td>
-            </tr>
-            <tr>
-                <th class="show">Publié le</th>
-                <td>{{ article.createdAt ? article.createdAt|date('d M. Y')}} à {{ article.createdAt ? article.createdAt|date('H:i') }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <h2 class="fw-bold label-show fs-2 mt-5">{{ article.title }}</h2>
+     <p class="label-show fs-6 text-secondary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar3 m-3" viewBox="0 0 16 16">
+    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+    <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+    </svg>Publié le {{ article.createdAt ? article.createdAt|date('d M. Y')}} à {{ article.createdAt ? article.createdAt|date('H:i') }}</p>
+    <p>{{ article.content }}</p>
 </div>
 {% else %}
 <div class="warning-page-section">

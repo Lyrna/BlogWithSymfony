@@ -37,6 +37,11 @@ class Article
      */
     public $author_id;
 
+     public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
+
     public function getId(): ?int
     {
         return $this->id;

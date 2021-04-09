@@ -7,26 +7,26 @@
         <h1 class="mb-2">Gestion des articles</h1>
         <p>Espace Administrateur</p>
     </header>
-<div class="fond p-5">
-<a href="{{ path('article_new') }}"><button class="btn btn-blue">Créer un article</button></a>
+<div class="fond py-4 lg-p-5">
+<a href="{{ path('article_new') }}"><button class="btn btn-blue btn-create">Créer un article</button></a>
     <table class="table">
         <thead>
             <tr>
-                <th>N°</th>
+                <th class="d-none-table">N°</th>
                 <th>Titre</th>
-                <th>Publié le</th>
+                <th class="d-none-table">Publié le</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.id }}</td>
-                <td class="article-title">{{ article.title }}</td>
-                <td>{{ article.createdAt ? article.createdAt|date('d M. Y')}} à {{ article.createdAt ? article.createdAt|date('H:i')}}</td>
+                <td class="d-none-table">{{ article.id }}</td>
+                <td class="article-title fw-bold">{{ article.title }}</td>
+                <td class="d-none-table">{{ article.createdAt ? article.createdAt|date('d M. Y')}} à {{ article.createdAt ? article.createdAt|date('H:i')}}</td>
                 <td>
-                    <a href="{{ path('article_show', {'id': article.id}) }}"><button class="btn btn-blue">Voir</button></a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}"><button class="btn btn-primary">Editer</button></a>
+                    <a href="{{ path('article_show', {'id': article.id}) }}"><button class="btn btn-blue see-edit">Voir</button></a>
+                    <a href="{{ path('article_edit', {'id': article.id}) }}"><button class="btn btn-primary see-edit">Editer</button></a>
                 </td>
             </tr>
         {% else %}

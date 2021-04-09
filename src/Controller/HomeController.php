@@ -31,6 +31,13 @@ class HomeController extends AbstractController
         return $this->render('home/article.html.twig', [
             'article' => $article,
         ]);
+    }
 
+    /**
+     * @Route("/forbidden_access", name="forbidden_access")
+     */
+    public function not_connected()
+    {
+        return $this->render('security/not_connected.html.twig');
     }
 }
